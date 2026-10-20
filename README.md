@@ -1,4 +1,4 @@
-# La Casa del Muro — Un lugar para desconectar
+# La Casa del Muro — Una casa con pasado. Mil historias por vivir.
 
 Nueva landing boutique de inspiración mediterránea. HTML5, CSS3 y JavaScript vanilla, sin frameworks, instalaciones ni compilación. Propuesta web no oficial.
 
@@ -15,8 +15,8 @@ Se han reconstruido encabezado, portada, secciones, galería, botones, footer y 
 - Blanco cálido, arena, espresso, oliva y cobre.
 - DM Serif Display local para titulares, Arial/Helvetica para contenido. Se ha retirado Barlow Condensed y su antiguo archivo de licencia.
 - Header integrado sobre la portada; fondo claro al desplazarse. Navegación horizontal desde 901 px y un único menú desplegable hasta 900 px.
-- Hero panorámico con título moderado, dos acciones y degradado para legibilidad.
-- Bienvenida equilibrada con fotografía vertical del municipio.
+- Hero preparado para una fotografía auténtica del alojamiento, con el eslogan «Una casa con pasado. Mil historias por vivir.». Mientras falta la imagen, muestra el fondo oliva y una indicación explícita; conserva acciones, tipografía y distribución.
+- Bienvenida con espacio vertical reservado para una fotografía auténtica. Se ha retirado el Ayuntamiento de la página y del lightbox.
 - Galería preparada para salón, dormitorios, cocina y terraza; fotografías aún pendientes.
 - Comodidades confirmadas con SVG originales y discretos, sin tarjetas.
 - Historia sobre arena con espacio preparado para el muro auténtico.
@@ -35,7 +35,7 @@ Se han reconstruido encabezado, portada, secciones, galería, botones, footer y 
 
 ## Fotografías disponibles y pendientes
 
-**Las cuatro fotografías disponibles son del entorno, no del alojamiento.** La panorámica de portada y el Ayuntamiento se identifican expresamente. No hay imágenes de otras viviendas ni fotografías generadas presentadas como reales. Las fotos del alojamiento no se han descargado desde Booking, Airbnb, Maps ni redes sociales.
+**Las dos fotografías mostradas son del entorno, no del alojamiento:** Sierra de Grazalema y río Majaceite. La panorámica del pueblo y el Ayuntamiento se conservan únicamente como archivos sin uso; no aparecen en la web. No hay imágenes de otras viviendas ni fotografías generadas presentadas como reales. Las fotos del alojamiento no se han descargado desde Booking, Airbnb, Maps ni redes sociales.
 
 El propietario debe aportar originales y autorización de uso web para:
 
@@ -53,8 +53,8 @@ Se recomiendan originales de alta resolución, luminosos, nítidos, sin marcas d
 
 Guardar JPEG o WebP optimizados y con nombres distintos en `img/`. No duplicar una misma toma en varias secciones.
 
-- **Portada:** sustituir `src`, `width`, `height` y `alt` de `.hero-photo`; actualizar la indicación del pie y el crédito. Revisar `object-position` en móvil y escritorio. No retirar el aviso hasta que se use una imagen real autorizada de la casa.
-- **Bienvenida:** actualizar el `img`, los datos `data-*`, `aria-label` del botón y el pie con fotógrafo y licencia.
+- **Portada:** añadir un `img.hero-photo` con `src`, dimensiones reales, `fetchpriority="high"` y `alt` descriptivo dentro de `data-photo-slot="portada"`, antes de `.hero-shade`; actualizar la indicación del pie y el crédito. Revisar `object-position` en móvil y escritorio. No retirar el aviso hasta que se use una imagen real autorizada de la casa.
+- **Bienvenida:** sustituir `.welcome-pending`, dentro de `data-photo-slot="bienvenida"`, por una fotografía auténtica o un botón ampliable como el ejemplo; añadir pie con fotógrafo y licencia.
 - **Galería:** contenedores `data-photo-slot="salon"`, `"dormitorios"`, `"cocina"`, `"terraza"`. Sustituir `.room-pending` por una fotografía o un botón ampliable como el ejemplo inferior. Mantener dimensiones naturales; la CSS ya admite imágenes completas.
 - **Historia:** sustituir `.wall-pending` dentro de `data-photo-slot="muro"`. No usar un muro genérico como si fuera el original.
 - Retirar avisos de pendiente solo en los recursos sustituidos; actualizar el aviso general cuando estén todas las fotos de los espacios.
@@ -78,8 +78,8 @@ El lightbox incorpora automáticamente cada botón `data-gallery` del HTML. Los 
 
 | Archivo | Fuente y autor | Licencia y tratamiento |
 | --- | --- | --- |
-| `img/el-bosque.webp` | **El Bosque Lomo de Enmedio.JPG**, Antonio Acosta Fernández, 2011. [Original](https://commons.wikimedia.org/wiki/File:El_Bosque_Lomo_de_Enmedio.JPG). | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/). Nueva copia de 3200 × 837, optimizada localmente a WebP calidad 78. Archivo completo; encuadre CSS adaptado en portada. |
-| `img/el-bosque-arquitectura.webp` | Ayuntamiento, **El Bosque (provincia de Cádiz, España) - P1470072.jpg**, El Pantera. [Original](https://commons.wikimedia.org/wiki/File:El_Bosque_(provincia_de_C%C3%A1diz,_Espa%C3%B1a)_-_P1470072.jpg). | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). 1200 × 1600, WebP calidad 78. Copia con la misma licencia, sin recortar. |
+| `img/el-bosque.webp` | **El Bosque Lomo de Enmedio.JPG**, Antonio Acosta Fernández, 2011. [Original](https://commons.wikimedia.org/wiki/File:El_Bosque_Lomo_de_Enmedio.JPG). | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/). Nueva copia de 3200 × 837, optimizada localmente a WebP calidad 78. Archivo completo, conservado sin uso en la página. |
+| `img/el-bosque-arquitectura.webp` | Ayuntamiento, **El Bosque (provincia de Cádiz, España) - P1470072.jpg**, El Pantera. [Original](https://commons.wikimedia.org/wiki/File:El_Bosque_(provincia_de_C%C3%A1diz,_Espa%C3%B1a)_-_P1470072.jpg). | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). 1200 × 1600, WebP calidad 78. Copia con la misma licencia, sin recortar. Archivo conservado sin uso en la página. |
 | `img/sierra-grazalema.webp` | **Grazalema Mountains (28227255684).jpg**, piet theisohn. [Original](https://commons.wikimedia.org/wiki/File:Grazalema_Mountains_(28227255684).jpg). | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/). 1800 × 475, WebP calidad 78; sin recorte. |
 | `img/rio-majaceite.webp` | **Río Majaceite - P1460080.jpg**, El Pantera. [Original](https://commons.wikimedia.org/wiki/File:R%C3%ADo_Majaceite_-_P1460080.jpg). | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). 1600 × 1200, WebP calidad 78; copia con la misma licencia, sin recorte. |
 | `fonts/dm-serif-display/regular.ttf` | **DM Serif Display**, Adobe y Google. [Distribución Google Fonts](https://github.com/google/fonts/tree/main/ofl/dmserifdisplay). | SIL Open Font License 1.1; texto completo en `fonts/dm-serif-display/OFL.txt`. Fuente local sin modificaciones. |
@@ -93,15 +93,21 @@ Nombre, municipio, teléfono, enlaces y servicios se conservan del encargo. Se a
 
 Confirmar datos y autorización con la propiedad antes de presentar la web como oficial. Plaza San Antonio, 4 sigue omitida por estar pendiente de confirmación inequívoca. Maps abre una búsqueda por nombre y municipio. No se añaden aforo, precios, reseñas, disponibilidad, WhatsApp ni perfiles sociales no verificados. Schema.org usa `LodgingBusiness` con dirección por localidad, sin puntuaciones ni precios.
 
+## Correcciones de contenido e icono
+
+Se han retirado los eslóganes de pausa, desconexión y ritmo; los textos describen la historia, los espacios y El Bosque. Se conserva la estructura, el header, la navegación, los colores y los datos de contacto. Solo cambia el SVG del aire acondicionado: seis brazos idénticos girados cada 60 grados, trazo uniforme y margen interior en viewBox 32 × 32. Los otros cinco iconos permanecen iguales.
+
+No se han incorporado fotografías nuevas: siguen pendientes portada, bienvenida, salón con chimenea, dormitorios, cocina, terraza y muro original.
+
 ## Comprobaciones
 
 Comprobado en Chrome con los archivos locales a **320, 375, 600, 768, 900, 901, 1024 y 1440 px**:
 
-- Cuatro imágenes cargadas, sin duplicados, y nueva serif local disponible.
+- Dos imágenes de contenido cargadas, sin duplicados, y serif local disponible.
 - Sin desbordamientos horizontales ni solapamiento entre marca y menú.
 - Menú móvil exclusivo hasta 900 px; horizontal exclusivo desde 901 px.
 - Apertura/cierre del menú, Escape, cierre al navegar y foco en el destino.
-- Lightbox con tres fotografías reales del entorno: navegación, flechas, Escape, restitución de foco y desbloqueo del scroll.
+- Lightbox con dos fotografías reales del entorno: navegación, flechas, Escape, restitución de foco y desbloqueo del scroll.
 - Todos los enlaces internos encuentran su destino; ningún enlace vacío.
 - Revelados al recorrer toda la página y movimiento reducido comprobados.
 - Navegación y contenido visibles con JavaScript desactivado.
