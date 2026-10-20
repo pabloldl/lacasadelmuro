@@ -1,98 +1,112 @@
-# La Casa del Muro — Entre muros y montañas
+# La Casa del Muro — Un lugar para desconectar
 
-Landing estática en HTML5, CSS3 y JavaScript vanilla. Sin frameworks, instalaciones ni compilación. Conserva la identidad editorial, la tipografía Barlow Condensed y la paleta papel, carbón y naranja. Propuesta web no oficial.
+Nueva landing boutique de inspiración mediterránea. HTML5, CSS3 y JavaScript vanilla, sin frameworks, instalaciones ni compilación. Propuesta web no oficial.
 
 ## Visualizar y publicar
 
-Abrir `index.html` en un navegador actual. Todos los recursos son locales: `css/`, `js/`, `img/` y `fonts/`. No se requieren Node.js, fuentes remotas ni un backend.
+Abrir `index.html` en un navegador actual. Todos los recursos se sirven localmente: `css/`, `js/`, `img/`, `fonts/`. No se requieren Node.js, fuentes remotas ni backend.
 
-Para hosting estático, subir el contenido completo de esta carpeta conservando las rutas y servir `index.html` como inicio. El repositorio del proyecto es [pabloldl/lacasadelmuro](https://github.com/pabloldl/lacasadelmuro). La web de referencia es [lacasadelmuro.netlify.app](https://lacasadelmuro.netlify.app/); la publicación automática depende de la conexión del sitio Netlify con el repositorio.
+En hosting estático, subir el contenido completo de esta carpeta conservando las rutas. El repositorio es [pabloldl/lacasadelmuro](https://github.com/pabloldl/lacasadelmuro) y el sitio es [lacasadelmuro.netlify.app](https://lacasadelmuro.netlify.app/). Netlify publica automáticamente los cambios de la rama conectada. Las URL canonical, Open Graph y Schema.org apuntan al dominio actual; actualizarlas si cambia.
 
-## Renovación fotográfica
+## Nuevo diseño
 
-Se han retirado los seis SVG abstractos que ocupaban portada, dormitorios, salón, cocina, terraza y muro. No se utilizan fotografías de otras viviendas ni imágenes generadas del alojamiento.
+Se han reconstruido encabezado, portada, secciones, galería, botones, footer y animaciones. No se conservan componentes ni CSS de la versión brutalista.
 
-- **Portada:** fotografía real del Ayuntamiento de El Bosque, identificada como imagen del entorno. Es una solución temporal mientras se recibe una fotografía autorizada de La Casa del Muro; no se presenta como su fachada.
-- **La casa:** cuatro espacios editoriales de texto preparados para fotografías independientes de dormitorios, salón con chimenea, cocina y terraza. Se indica discretamente que las fotos están pendientes. No existen botones para ampliar imágenes inexistentes.
-- **Historia:** espacio reservado para una fotografía del muro original. No se sustituye por un muro ajeno ni uno generado.
-- **Entorno:** se conserva la panorámica de El Bosque de este mismo proyecto y se incorporan fotografías reales de la Sierra de Grazalema y el río Majaceite. No se repiten imágenes. El lightbox permite ampliar las tres fotografías nuevas a su encuadre completo.
-- **Espacios:** las filas desplegables conservan sus textos y eliminan los enlaces «Ver estudio provisional».
+- Blanco cálido, arena, espresso, oliva y cobre.
+- DM Serif Display local para titulares, Arial/Helvetica para contenido. Se ha retirado Barlow Condensed y su antiguo archivo de licencia.
+- Header integrado sobre la portada; fondo claro al desplazarse. Navegación horizontal desde 901 px y un único menú desplegable hasta 900 px.
+- Hero panorámico con título moderado, dos acciones y degradado para legibilidad.
+- Bienvenida equilibrada con fotografía vertical del municipio.
+- Galería preparada para salón, dormitorios, cocina y terraza; fotografías aún pendientes.
+- Comodidades confirmadas con SVG originales y discretos, sin tarjetas.
+- Historia sobre arena con espacio preparado para el muro auténtico.
+- Paisajes de Grazalema y Majaceite a su proporción natural, sin duplicar fotografías.
+- Contacto sencillo y pie espresso con navegación y créditos.
+- Apariciones suaves con Intersection Observer, navegación por teclado y respeto a `prefers-reduced-motion`.
 
-## Origen, autoría y licencias
+## Editar textos, colores y teléfono
 
-| Archivo local | Fuente y autor | Licencia y tratamiento |
-| --- | --- | --- |
-| `img/el-bosque-arquitectura.jpg` | **El Bosque (provincia de Cádiz, España) - P1470072.jpg**, Ayuntamiento. Autor: **El Pantera**. [Ficha original](https://commons.wikimedia.org/wiki/File:El_Bosque_(provincia_de_C%C3%A1diz,_Espa%C3%B1a)_-_P1470072.jpg). | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Copia de 1200 × 1600, JPEG calidad 85; encuadre CSS adaptado en escritorio. El archivo conserva el encuadre completo. La copia mantiene CC BY-SA 4.0. |
-| `img/el-bosque.jpg` | **El Bosque Lomo de Enmedio.JPG**. Autor: **Antonio Acosta Fernández**, 2011. [Ficha original](https://commons.wikimedia.org/wiki/File:El_Bosque_Lomo_de_Enmedio.JPG). | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/). Recurso conservado de este mismo proyecto, no de otra landing. Reducción de 6240 × 1632 a 1920 × 502, JPEG calidad 85; encuadre visual adaptado. |
-| `img/sierra-grazalema.jpg` | **Grazalema Mountains (28227255684).jpg**. Autor: **piet theisohn**. [Ficha original](https://commons.wikimedia.org/wiki/File:Grazalema_Mountains_(28227255684).jpg). | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/). Copia de 1800 × 475, JPEG calidad 85; sin recorte del archivo ni en la galería. |
-| `img/rio-majaceite.jpg` | **Río Majaceite - P1460080.jpg**, a su paso por El Bosque. Autor: **El Pantera**. [Ficha original](https://commons.wikimedia.org/wiki/File:R%C3%ADo_Majaceite_-_P1460080.jpg). | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Copia de 1600 × 1200, JPEG calidad 85; sin recorte del archivo ni en la galería. La copia mantiene CC BY-SA 4.0. |
-| `fonts/barlow-condensed-bold.ttf` | Barlow Condensed Bold, **The Barlow Project Authors**. [Proyecto original](https://github.com/jpt/barlow). | SIL Open Font License 1.1. Copia completa de la licencia en `fonts/OFL.txt`; fuente local sin modificar. |
-| `favicon.svg` | Monograma original del proyecto. | Sin recursos de terceros. |
+- Contenido directamente en `index.html`. Anclas: `inicio`, `casa`, `rincones`, `comodidades`, `historia`, `entorno`, `contacto`, `reservas`.
+- Variables en `:root` de `css/style.css`: `--warm: #FCFAF7`, `--sand: #E8DFD3`, `--espresso: #382D27`, `--olive: #4E5946`, `--copper: #B58A69`. Cobre se reserva para detalles decorativos; el cuerpo de texto usa tonos oscuros.
+- Teléfono: buscar `644 863 760` y `tel:+34644863760`; actualizar también `telephone` en JSON-LD.
+- Reserva: buscar todas las apariciones de `https://www.booking.com/hotel/es/casa-del-muro.es.html`.
+- El año se actualiza con JavaScript; HTML incluye un respaldo.
+- La tipografía se carga desde `fonts/dm-serif-display/regular.ttf`, con licencia SIL OFL en esa misma carpeta.
 
-Las fuentes y licencias se verificaron mediante los metadatos de Wikimedia Commons. Las copias reducidas de arquitectura y Majaceite se obtuvieron del servicio oficial de miniaturas y se optimizaron localmente; la sierra y la panorámica se redujeron mediante wsrv.nl. Ningún servicio externo es necesario para mostrar las imágenes. Los archivos locales no incorporan recortes, retoques del contenido ni deformaciones. Créditos y licencias accesibles en la propia web, en «Créditos fotográficos».
+## Fotografías disponibles y pendientes
 
-Las fotografías muestran el **entorno**. No se atribuyen al alojamiento ni se presentan como sus vistas. No se han descargado fotografías del alojamiento desde Booking, Maps, Airbnb o redes sociales. No se han reutilizado las imágenes de otras webs del espacio de trabajo.
+**Las cuatro fotografías disponibles son del entorno, no del alojamiento.** La panorámica de portada y el Ayuntamiento se identifican expresamente. No hay imágenes de otras viviendas ni fotografías generadas presentadas como reales. Las fotos del alojamiento no se han descargado desde Booking, Airbnb, Maps ni redes sociales.
 
-## Material necesario del propietario
+El propietario debe aportar originales y autorización de uso web para:
 
-Para completar la fotografía del alojamiento se necesitan originales de alta resolución y permiso de uso web de:
+1. Una panorámica atractiva de la casa para portada.
+2. Una fotografía vertical del alojamiento para bienvenida, si se desea sustituir la arquitectura del pueblo.
+3. Salón donde aparezca la chimenea.
+4. Dormitorios, preferiblemente una toma de cada dormitorio.
+5. Cocina equipada.
+6. Terraza en su configuración real.
+7. Muro histórico: contexto y detalle.
 
-1. Fachada, entrada o una vista arquitectónica reconocible para portada.
-2. Dormitorios: al menos una toma vertical y, preferiblemente, una de cada dormitorio.
-3. Salón donde se vea la chimenea.
-4. Cocina equipada.
-5. Terraza: una toma general que muestre su configuración real.
-6. Muro histórico: una toma de contexto y otra de detalle, si es posible.
+Se recomiendan originales de alta resolución, luminosos, nítidos, sin marcas de agua ni capturas de pantalla. Registrar autor y permiso de la propiedad. Los espacios de galería y muro siguen pendientes y no constituyen una presentación fotográfica definitiva del alojamiento.
 
-Se recomiendan imágenes nítidas, con luz natural, sin marcas de agua y sin enviar únicamente capturas de pantalla. Registrar nombre del fotógrafo y autorización del propietario. Mientras falte este material, la galería de la casa y el muro no pueden considerarse definitivos.
+## Incorporar imágenes auténticas
 
-## Incorporar fotografías de la casa
+Guardar JPEG o WebP optimizados y con nombres distintos en `img/`. No duplicar una misma toma en varias secciones.
 
-Guardar JPEG o WebP optimizados en `img/`, con nombres distintos y sin duplicados. En `index.html` existen cinco contenedores `data-photo-slot`: `dormitorios`, `salon`, `cocina`, `terraza`, `muro`.
-
-Sustituir el contenido de `.photo-pending` o `.wall-photo-pending` por la fotografía autorizada. La composición ya dispone de columnas y anchos desiguales. Respetar las proporciones naturales y revisar el resultado en móvil.
-
-Para incorporar una imagen al lightbox, añadir este botón dentro de su figura, adaptando los datos:
+- **Portada:** sustituir `src`, `width`, `height` y `alt` de `.hero-photo`; actualizar la indicación del pie y el crédito. Revisar `object-position` en móvil y escritorio. No retirar el aviso hasta que se use una imagen real autorizada de la casa.
+- **Bienvenida:** actualizar el `img`, los datos `data-*`, `aria-label` del botón y el pie con fotógrafo y licencia.
+- **Galería:** contenedores `data-photo-slot="salon"`, `"dormitorios"`, `"cocina"`, `"terraza"`. Sustituir `.room-pending` por una fotografía o un botón ampliable como el ejemplo inferior. Mantener dimensiones naturales; la CSS ya admite imágenes completas.
+- **Historia:** sustituir `.wall-pending` dentro de `data-photo-slot="muro"`. No usar un muro genérico como si fuera el original.
+- Retirar avisos de pendiente solo en los recursos sustituidos; actualizar el aviso general cuando estén todas las fotos de los espacios.
+- Actualizar README, créditos y el encabezado del lightbox si este deja de mostrar solo el entorno.
 
 ```html
-<button class="image-trigger" type="button" data-gallery
+<button class="photo-button" type="button" data-gallery
   data-image="img/salon-real.webp"
   data-alt="Descripción fiel del salón de La Casa del Muro"
-  data-caption="Salón con chimenea · Fotografía: nombre del autor"
+  data-caption="Salón con chimenea · Fotografía: autor y licencia"
   aria-label="Ampliar fotografía del salón">
   <img src="img/salon-real.webp" width="1600" height="1067"
     loading="lazy" alt="Descripción fiel del salón de La Casa del Muro">
-  <span class="expand-mark" aria-hidden="true">↗</span>
+  <span class="photo-expand" aria-hidden="true">↗</span>
 </button>
 ```
 
-Usar las dimensiones reales del archivo y retirar las indicaciones de pendiente solo en las imágenes sustituidas. El script incorpora automáticamente cada botón `data-gallery` a la navegación del lightbox. Si se añaden fotografías de la casa, actualizar también el encabezado del lightbox para reflejar que ya no contiene solo imágenes del entorno.
+El lightbox incorpora automáticamente cada botón `data-gallery` del HTML. Los espacios sin fotografía no tienen botones vacíos. Admite anterior/siguiente, flechas, Escape, cierre fuera de la ventana, bloqueo de scroll y restauración del foco.
 
-En portada, actualizar `src`, `width`, `height`, `alt`, `data-image`, `data-alt`, `data-caption`, `aria-label` y el pie; retirar la atribución al Ayuntamiento al reemplazar su fotografía.
+## Fuentes y licencias
 
-## Textos, colores y datos
+| Archivo | Fuente y autor | Licencia y tratamiento |
+| --- | --- | --- |
+| `img/el-bosque.webp` | **El Bosque Lomo de Enmedio.JPG**, Antonio Acosta Fernández, 2011. [Original](https://commons.wikimedia.org/wiki/File:El_Bosque_Lomo_de_Enmedio.JPG). | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/). Nueva copia de 3200 × 837, optimizada localmente a WebP calidad 78. Archivo completo; encuadre CSS adaptado en portada. |
+| `img/el-bosque-arquitectura.webp` | Ayuntamiento, **El Bosque (provincia de Cádiz, España) - P1470072.jpg**, El Pantera. [Original](https://commons.wikimedia.org/wiki/File:El_Bosque_(provincia_de_C%C3%A1diz,_Espa%C3%B1a)_-_P1470072.jpg). | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). 1200 × 1600, WebP calidad 78. Copia con la misma licencia, sin recortar. |
+| `img/sierra-grazalema.webp` | **Grazalema Mountains (28227255684).jpg**, piet theisohn. [Original](https://commons.wikimedia.org/wiki/File:Grazalema_Mountains_(28227255684).jpg). | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/). 1800 × 475, WebP calidad 78; sin recorte. |
+| `img/rio-majaceite.webp` | **Río Majaceite - P1460080.jpg**, El Pantera. [Original](https://commons.wikimedia.org/wiki/File:R%C3%ADo_Majaceite_-_P1460080.jpg). | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). 1600 × 1200, WebP calidad 78; copia con la misma licencia, sin recorte. |
+| `fonts/dm-serif-display/regular.ttf` | **DM Serif Display**, Adobe y Google. [Distribución Google Fonts](https://github.com/google/fonts/tree/main/ofl/dmserifdisplay). | SIL Open Font License 1.1; texto completo en `fonts/dm-serif-display/OFL.txt`. Fuente local sin modificaciones. |
+| `favicon.svg` y SVG de comodidades | Dibujos originales de este rediseño. | Sin recursos gráficos de terceros. |
 
-- Editar los textos en `index.html`. Secciones: `lugar`, `casa`, `historia`, `espacios`, `entorno`, `contacto`; `reservas` permanece dentro de contacto.
-- Variables CSS: `--paper: #F1EFE9`, `--ink: #191919`, `--accent: #D94F30`, `--surface: #DAD6CE`, `--dark: #252525`. El bloque naranja usa texto `#101010` para contraste. Se conserva el arreglo de la Ñ mediante el margen de recorte superior del título.
-- Teléfono: sustituir `644 863 760` y todos los `tel:+34644863760`, también `telephone` en Schema.org.
-- Booking: conservar o actualizar todas las apariciones de `https://www.booking.com/hotel/es/casa-del-muro.es.html`.
-- Menú único: móvil hasta 700 px, horizontal desde 701 px. `details` funciona sin JS; el lightbox devuelve el foco y admite flechas y Escape. Animaciones con Intersection Observer y respeto a movimiento reducido.
-- La información comercial sigue basada en el encargo; el texto del muro atribuye su antigüedad a la descripción pública del anfitrión. No se añaden servicios, aforo, reseñas, precios ni políticas.
-- Plaza San Antonio, 4 sigue omitida, pendiente de confirmación inequívoca. Maps busca nombre y municipio.
-- Confirmar datos y autorización con la propiedad antes de presentar la web como oficial. No se incluyen WhatsApp ni redes sociales no verificadas.
-- Con dominio definitivo confirmado, añadir canonical, `og:url` y URL absoluta de `og:image`. La imagen OG actual es una panorámica del municipio, no de la vivienda.
+Fotografías y permisos verificados durante su incorporación al proyecto. Se conservan únicamente recursos de **este mismo proyecto**, no de La Casita de El Bosque ni de otras webs. Los créditos y enlaces a licencias están accesibles en el pie. Las copias de arquitectura y río se descargaron de las miniaturas oficiales y se optimizaron localmente; la sierra se redujo mediante wsrv.nl. Los cuatro archivos se exportaron a WebP sin alterar su contenido. Todos se sirven localmente, sin dependencias de esos servicios.
 
-## Validación
+## Datos comerciales
 
-Comprobado en Chrome a 320, 375, 700, 701, 768, 1024 y 1440 px:
+Nombre, municipio, teléfono, enlaces y servicios se conservan del encargo. Se atribuye la antigüedad del muro a la descripción pública del anfitrión, sin fechas exactas ni acontecimientos inventados.
 
-- Cuatro fotografías locales cargadas, sin duplicados; fuente local disponible.
-- Sin gráficos abstractos, imágenes rotas ni enlaces vacíos.
-- Proporciones originales en galería y lightbox; encuadre CSS en portada y panorámica.
-- Sin desbordamientos horizontales ni solapamiento de la cabecera.
-- Menú móvil, Escape, filas desplegables y navegación del lightbox funcionales.
-- Restitución de foco, desbloqueo del scroll y navegación por flechas comprobados.
-- Revelados al recorrer la página y movimiento reducido comprobados.
+Confirmar datos y autorización con la propiedad antes de presentar la web como oficial. Plaza San Antonio, 4 sigue omitida por estar pendiente de confirmación inequívoca. Maps abre una búsqueda por nombre y municipio. No se añaden aforo, precios, reseñas, disponibilidad, WhatsApp ni perfiles sociales no verificados. Schema.org usa `LodgingBusiness` con dirección por localidad, sin puntuaciones ni precios.
+
+## Comprobaciones
+
+Comprobado en Chrome con los archivos locales a **320, 375, 600, 768, 900, 901, 1024 y 1440 px**:
+
+- Cuatro imágenes cargadas, sin duplicados, y nueva serif local disponible.
+- Sin desbordamientos horizontales ni solapamiento entre marca y menú.
+- Menú móvil exclusivo hasta 900 px; horizontal exclusivo desde 901 px.
+- Apertura/cierre del menú, Escape, cierre al navegar y foco en el destino.
+- Lightbox con tres fotografías reales del entorno: navegación, flechas, Escape, restitución de foco y desbloqueo del scroll.
+- Todos los enlaces internos encuentran su destino; ningún enlace vacío.
+- Revelados al recorrer toda la página y movimiento reducido comprobados.
+- Navegación y contenido visibles con JavaScript desactivado.
 - Sin errores JavaScript detectados durante estas interacciones.
+- Inspección de capturas completas de escritorio, tableta y móvil.
+- Rutas locales, JSON-LD y `.gitignore` comprobados. Las cuatro fotografías suman 1.320.626 bytes; la fuente, 70.348 bytes. No se ha ejecutado Lighthouse ni se afirma una puntuación de rendimiento.
 
-Las reservas, los resultados de Maps y la apertura de llamadas dependen de servicios externos; no se han enviado reservas ni realizado llamadas. La comprobación no sustituye una auditoría completa en Safari, Firefox o lectores de pantalla.
+No se han enviado reservas ni realizado llamadas. Booking, Maps y la aplicación telefónica dependen de servicios externos. No se ha efectuado una auditoría completa en Safari, Firefox ni lectores de pantalla.

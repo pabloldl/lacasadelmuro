@@ -2,48 +2,59 @@
 
 document.documentElement.classList.add('js');
 
-// Un único menú: horizontal en escritorio y desplegable en móvil.
-const masthead = document.querySelector('.masthead');
-const menuButton = document.querySelector('.nav-toggle');
+// La misma navegación se adapta al móvil. El fondo acompaña al desplazamiento.
+const header = document.querySelector('.site-header');
+const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#navegacion');
-const mobileQuery = window.matchMedia('(max-width: 700px)');
+const mobile = window.matchMedia('(max-width: 900px)');
 menuButton.hidden = false;
+
+function updateHeader() {
+  header.classList.toggle('scrolled', window.scrollY > 35);
+}
 
 function closeMenu(restoreFocus = false) {
   navigation.classList.remove('open');
+  header.classList.remove('menu-open');
   menuButton.setAttribute('aria-expanded', 'false');
-  menuButton.querySelector('.nav-label').textContent = 'MENÚ';
+  menuButton.querySelector('.menu-label').textContent = 'Menú';
   if (restoreFocus) menuButton.focus();
 }
 
 menuButton.addEventListener('click', () => {
   const open = menuButton.getAttribute('aria-expanded') !== 'true';
-  navigation.classList.toggle('open', open);
   menuButton.setAttribute('aria-expanded', String(open));
-  menuButton.querySelector('.nav-label').textContent = open ? 'CERRAR' : 'MENÚ';
+  menuButton.querySelector('.menu-label').textContent = open ? 'Cerrar' : 'Menú';
+  navigation.classList.toggle('open', open);
+  header.classList.toggle('menu-open', open);
 });
 
 navigation.addEventListener('click', event => {
-  if (event.target.closest('a')) closeMenu();
+  const link = event.target.closest('a');
+  if (!link) return;
+  const destination = link.getAttribute('href');
+  const focusDestination = mobile.matches && destination.startsWith('#');
+  closeMenu();
+  if (focusDestination) {
+    const section = document.querySelector(destination);
+    section.setAttribute('tabindex', '-1');
+    section.focus({ preventScroll: true });
+    section.addEventListener('blur', () => section.removeAttribute('tabindex'), { once: true });
+  }
 });
 
 document.addEventListener('click', event => {
-  if (!masthead.contains(event.target)) closeMenu();
+  if (!header.contains(event.target)) closeMenu();
 });
-
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') closeMenu(true);
 });
-
-mobileQuery.addEventListener('change', () => closeMenu());
-window.addEventListener('scroll', () => {
-  masthead.classList.toggle('scrolled', window.scrollY > 20);
-}, { passive: true });
-
+mobile.addEventListener('change', () => closeMenu());
+window.addEventListener('scroll', updateHeader, { passive: true });
+updateHeader();
 document.querySelector('#year').textContent = new Date().getFullYear();
 
-// Máscaras de titulares, revelado vertical de imágenes y expansión de líneas.
-// Todo es visible por defecto; el observador se activa solo si está disponible.
+// Apariciones discretas; todo permanece visible sin JS o con movimiento reducido.
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 if ('IntersectionObserver' in window && !reducedMotion.matches) {
   const observer = new IntersectionObserver(entries => {
@@ -54,16 +65,14 @@ if ('IntersectionObserver' in window && !reducedMotion.matches) {
       }
     });
   }, { threshold: 0.08 });
-
-  document.querySelectorAll('.reveal, .rule-reveal').forEach(element => observer.observe(element));
+  document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
   document.documentElement.classList.add('motion');
   reducedMotion.addEventListener('change', event => {
     if (event.matches) document.documentElement.classList.remove('motion');
   });
 }
 
-// Fotografías reales del entorno. Los espacios sin fotografías no tienen
-// botones vacíos. Las imágenes autorizadas de la casa se añadirán a este archivo.
+// Lightbox de fotografías disponibles; sin acciones para las fotos ausentes.
 const gallery = [...document.querySelectorAll('[data-gallery]')];
 const lightbox = document.querySelector('.lightbox');
 const lightboxImage = lightbox.querySelector('img');
@@ -80,38 +89,25 @@ function showImage(index) {
   lightbox.querySelector('.lightbox-count').textContent = `${currentImage + 1} / ${gallery.length}`;
 }
 
-function openImage(index, origin) {
-  trigger = origin;
+gallery.forEach((item, index) => item.addEventListener('click', () => {
+  trigger = item;
   showImage(index);
   lightbox.showModal();
   document.body.classList.add('locked');
-}
-
-gallery.forEach((item, index) => {
-  item.addEventListener('click', () => openImage(index, item));
-});
+}));
 
 lightbox.querySelector('.lightbox-close').addEventListener('click', () => lightbox.close());
 lightbox.querySelector('.lightbox-prev').addEventListener('click', () => showImage(currentImage - 1));
 lightbox.querySelector('.lightbox-next').addEventListener('click', () => showImage(currentImage + 1));
-
 lightbox.addEventListener('keydown', event => {
-  if (event.key === 'ArrowLeft') {
-    event.preventDefault();
-    showImage(currentImage - 1);
-  }
-  if (event.key === 'ArrowRight') {
-    event.preventDefault();
-    showImage(currentImage + 1);
-  }
+  if (event.key === 'ArrowLeft') { event.preventDefault(); showImage(currentImage - 1); }
+  if (event.key === 'ArrowRight') { event.preventDefault(); showImage(currentImage + 1); }
 });
-
 lightbox.addEventListener('click', event => {
   if (event.target !== lightbox) return;
-  const box = lightbox.getBoundingClientRect();
-  if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) lightbox.close();
+  const rect = lightbox.getBoundingClientRect();
+  if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) lightbox.close();
 });
-
 lightbox.addEventListener('close', () => {
   document.body.classList.remove('locked');
   if (trigger) trigger.focus();
