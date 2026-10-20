@@ -10,8 +10,8 @@
   <meta property="og:description" content="Una casa con memoria en El Bosque, Cádiz. Propuesta web no oficial.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_ES">
-  <meta property="og:image" content="img/muro.svg">
-  <meta property="og:image:alt" content="Estudio abstracto provisional de materia y líneas. No representa el alojamiento.">
+  <meta property="og:image" content="img/el-bosque.jpg">
+  <meta property="og:image:alt" content="Panorámica real del pueblo de El Bosque, Cádiz; imagen del entorno.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" href="fonts/barlow-condensed-bold.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="css/style.css">
@@ -61,10 +61,12 @@
           <span class="type-mask"><span>Y MONTAÑAS.</span></span>
         </h1>
         <figure class="cover-visual image-wipe">
-          <img src="img/muro.svg" width="1000" height="1100" alt="Estudio abstracto de superficies, textura y líneas. Placeholder provisional, no representa la casa." fetchpriority="high">
-          <figcaption class="image-caption mono"><span>FIG. 01 / MATERIA</span><span>VISUAL PROVISIONAL</span></figcaption>
+          <button class="cover-photo-button" type="button" data-gallery data-image="img/el-bosque-arquitectura.jpg" data-alt="Fachada del Ayuntamiento de El Bosque, con balcones y arcos. Es arquitectura del pueblo, no el alojamiento." data-caption="Ayuntamiento de El Bosque · fotografía del entorno, no de La Casa del Muro. El Pantera · CC BY-SA 4.0. Encuadre adaptado." aria-label="Ampliar fotografía del Ayuntamiento de El Bosque">
+            <img src="img/el-bosque-arquitectura.jpg" width="1200" height="1600" alt="Arcos y fachada del Ayuntamiento de El Bosque. Imagen del entorno; no representa el alojamiento." fetchpriority="high">
+            <span class="expand-mark" aria-hidden="true">↗</span>
+          </button>
+          <figcaption class="image-caption mono"><span>EL BOSQUE / AYUNTAMIENTO<br>Imagen del entorno · portada del alojamiento pendiente</span><a href="#creditos-fotos">EL PANTERA / CC BY-SA 4.0</a></figcaption>
         </figure>
-        <span class="cover-register mono" aria-hidden="true">M — 01<br>PIEDRA / LUZ / TIEMPO</span>
       </div>
       <div class="cover-foot">
         <a class="scroll-link mono" href="#lugar"><span aria-hidden="true">↓</span> BAJA. CAMBIA DE RITMO.</a>
@@ -88,27 +90,24 @@
     <section class="house-edit page-margin section-space" id="casa" aria-labelledby="house-title">
       <div class="section-label mono rule-reveal"><span>02 / LA CASA</span><span>UNA MIRADA AL INTERIOR</span></div>
       <div class="house-intro"><h2 id="house-title" class="display-title type-mask reveal"><span>ESPACIO<br>PARA QUEDARSE.</span></h2><p>Descanso, conversación y vida cotidiana.<br>La casa, a tu manera.</p></div>
-      <p class="provisional-notice mono">ARCHIVO VISUAL PROVISIONAL / Fotografías auténticas pendientes de autorización. Estos estudios abstractos no representan el alojamiento.</p>
-      <div class="magazine-gallery">
-        <figure class="editorial-photo photo-vertical image-wipe reveal">
-          <button type="button" class="image-trigger" data-gallery data-image="img/dormitorios.svg" data-alt="Estudio abstracto vertical de líneas y planos, provisional; no representa los dormitorios." data-caption="Dormitorios / Estudio abstracto provisional. Fotografía real pendiente." aria-label="Ampliar visual provisional de dormitorios">
-            <img src="img/dormitorios.svg" width="800" height="1100" loading="lazy" alt="Estudio abstracto vertical, reservado para la fotografía de dormitorios."><span class="expand-mark" aria-hidden="true">↗</span>
-          </button>
-          <figcaption><span class="mono">01 / DORMITORIOS</span><span>El descanso, sin prisa.</span></figcaption>
+      <p class="house-photo-note mono">Fotografías del alojamiento pendientes de recibir y autorizar.</p>
+      <div class="house-photo-layout">
+        <figure class="house-photo-slot slot-bedroom" data-photo-slot="dormitorios">
+          <div class="photo-pending"><span class="mono">01 / DESCANSAR</span><strong>TRES<br>DORMITORIOS.</strong><span class="pending-caption">Fotografía pendiente</span></div>
+          <figcaption class="mono">El descanso, sin prisa.</figcaption>
         </figure>
-        <figure class="editorial-photo photo-wide image-wipe reveal">
-          <button type="button" class="image-trigger" data-gallery data-image="img/salon.svg" data-alt="Composición abstracta horizontal de materia y sombra, provisional; no representa el salón." data-caption="Salón con chimenea / Estudio abstracto provisional. Fotografía real pendiente." aria-label="Ampliar visual provisional del salón">
-            <img src="img/salon.svg" width="1200" height="760" loading="lazy" alt="Composición abstracta horizontal, reservada para la fotografía del salón."><span class="expand-mark" aria-hidden="true">↗</span>
-          </button>
-          <figcaption><span class="mono">02 / SALÓN CON CHIMENEA</span><span>Tiempo para encontrarse.</span></figcaption>
+        <figure class="house-photo-slot slot-living" data-photo-slot="salon">
+          <div class="photo-pending"><span class="mono">02 / ENCONTRARSE</span><strong>SALÓN CON<br>CHIMENEA.</strong><span class="pending-caption">Fotografía pendiente</span></div>
+          <figcaption class="mono">Tiempo para encontrarse.</figcaption>
         </figure>
-        <figure class="editorial-photo photo-small image-wipe reveal">
-          <button type="button" class="image-trigger" data-gallery data-image="img/cocina.svg" data-alt="Estudio abstracto de superficies y retícula, provisional; no representa la cocina." data-caption="Cocina equipada / Estudio abstracto provisional. Fotografía real pendiente." aria-label="Ampliar visual provisional de cocina">
-            <img src="img/cocina.svg" width="1000" height="680" loading="lazy" alt="Estudio abstracto de superficies, reservado para la fotografía de la cocina."><span class="expand-mark" aria-hidden="true">↗</span>
-          </button>
-          <figcaption><span class="mono">03 / COCINA EQUIPADA</span><span>Las cosas de cada día.</span></figcaption>
+        <figure class="house-photo-slot slot-kitchen" data-photo-slot="cocina">
+          <div class="photo-pending"><span class="mono">03 / DISFRUTAR</span><strong>COCINA<br>EQUIPADA.</strong><span class="pending-caption">Fotografía pendiente</span></div>
+          <figcaption class="mono">Las cosas de cada día.</figcaption>
         </figure>
-        <p class="gallery-marginal mono" aria-hidden="true">LA CASA DEL MURO<br>ESTUDIOS DE MATERIA<br>NO SON PLANOS DEL EDIFICIO</p>
+        <figure class="house-photo-slot slot-terrace" data-photo-slot="terraza">
+          <div class="photo-pending"><span class="mono">04 / PARAR</span><strong>TIEMPO<br>EN LA TERRAZA.</strong><span class="pending-caption">Fotografía pendiente</span></div>
+          <figcaption class="mono">Momentos sin prisa.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -117,7 +116,7 @@
         <div class="section-label mono rule-reveal"><span>03 / LA HISTORIA</span><span>LO QUE PERMANECE</span></div>
         <h2 id="history-title" class="history-title reveal"><span class="type-mask"><span>LOS MUROS</span></span><span class="type-mask"><span>GUARDAN <span class="accent">HISTORIAS.</span></span></span></h2>
         <div class="history-body">
-          <figure class="history-detail image-wipe reveal"><img src="img/piedra.svg" width="1100" height="850" loading="lazy" alt="Composición abstracta de materia fragmentada; provisional, no es un detalle del muro real."><figcaption class="mono">FIG. 02 / MEMORIA MATERIAL · VISUAL PROVISIONAL</figcaption></figure>
+          <figure class="history-detail" data-photo-slot="muro"><div class="wall-photo-pending"><span class="mono">LA MEMORIA DE LA CASA</span><p>La historia está aquí.<br>Su fotografía, por llegar.</p><span class="pending-caption">Espacio reservado para una fotografía autorizada del muro original.</span></div></figure>
           <div class="history-text reveal"><span class="history-cross" aria-hidden="true">＋</span><p>El nombre viene de lo que queda.</p><p>Según la descripción pública del anfitrión, la vivienda combina elementos modernos con restos de un antiguo muro de una construcción de más de cien años.</p><p>Una memoria que da carácter a la casa, sin dejar de ser un lugar para el presente.</p><span class="mono history-note">PIEDRA ANTIGUA. VIDA CONTEMPORÁNEA.</span></div>
         </div>
       </div>
@@ -127,10 +126,10 @@
       <div class="section-label mono rule-reveal"><span>04 / LOS ESPACIOS</span><span>EL INTERIOR, EN CUATRO TIEMPOS</span></div>
       <div class="spaces-heading"><h2 id="spaces-title" class="display-title type-mask reveal"><span>HACER<br>VIDA AQUÍ.</span></h2><p class="mono">ABRE CADA ESPACIO <span aria-hidden="true">↓</span></p></div>
       <div class="space-index">
-        <details class="space-row rule-reveal"><summary><span class="row-number mono">01</span><h3>SALÓN</h3><span class="row-note mono">ALREDEDOR DE LA CHIMENEA</span><span class="row-plus" aria-hidden="true">+</span></summary><div class="space-description"><p>Un salón con chimenea para compartir la conversación y bajar el ritmo al volver a casa.</p><button class="editorial-link" type="button" data-open-gallery="1">Ver estudio provisional <span aria-hidden="true">↗</span></button></div></details>
-        <details class="space-row rule-reveal"><summary><span class="row-number mono">02</span><h3>DORMITORIOS</h3><span class="row-note mono">TRES ESPACIOS DE DESCANSO</span><span class="row-plus" aria-hidden="true">+</span></summary><div class="space-description"><p>Tres dormitorios para hacer una pausa entre un día y el siguiente. Consulta la distribución y las condiciones directamente con el alojamiento.</p><button class="editorial-link" type="button" data-open-gallery="0">Ver estudio provisional <span aria-hidden="true">↗</span></button></div></details>
-        <details class="space-row rule-reveal"><summary><span class="row-number mono">03</span><h3>COCINA</h3><span class="row-note mono">EL GUSTO DE LO COTIDIANO</span><span class="row-plus" aria-hidden="true">+</span></summary><div class="space-description"><p>Una cocina equipada para organizar tus días a tu manera y disfrutar de los pequeños rituales de cada escapada.</p><button class="editorial-link" type="button" data-open-gallery="2">Ver estudio provisional <span aria-hidden="true">↗</span></button></div></details>
-        <details class="space-row rule-reveal"><summary><span class="row-number mono">04</span><h3>TERRAZA</h3><span class="row-note mono">MOMENTOS SIN PRISA</span><span class="row-plus" aria-hidden="true">+</span></summary><div class="space-description"><p>Una terraza para dedicar tiempo a un libro, a una conversación o a no hacer planes.</p><button class="editorial-link" type="button" data-gallery data-image="img/terraza.svg" data-alt="Composición gráfica abstracta de luz, provisional; no representa la terraza ni sus vistas." data-caption="Terraza / Estudio abstracto provisional. Fotografía real pendiente.">Ver estudio provisional <span aria-hidden="true">↗</span></button></div></details>
+        <details class="space-row rule-reveal"><summary><span class="row-number mono">01</span><h3>SALÓN</h3><span class="row-note mono">ALREDEDOR DE LA CHIMENEA</span><span class="row-plus" aria-hidden="true">+</span></summary><div class="space-description"><p>Un salón con chimenea para compartir la conversación y bajar el ritmo al volver a casa.</p></div></details>
+        <details class="space-row rule-reveal"><summary><span class="row-number mono">02</span><h3>DORMITORIOS</h3><span class="row-note mono">TRES ESPACIOS DE DESCANSO</span><span class="row-plus" aria-hidden="true">+</span></summary><div class="space-description"><p>Tres dormitorios para hacer una pausa entre un día y el siguiente. Consulta la distribución y las condiciones directamente con el alojamiento.</p></div></details>
+        <details class="space-row rule-reveal"><summary><span class="row-number mono">03</span><h3>COCINA</h3><span class="row-note mono">EL GUSTO DE LO COTIDIANO</span><span class="row-plus" aria-hidden="true">+</span></summary><div class="space-description"><p>Una cocina equipada para organizar tus días a tu manera y disfrutar de los pequeños rituales de cada escapada.</p></div></details>
+        <details class="space-row rule-reveal"><summary><span class="row-number mono">04</span><h3>TERRAZA</h3><span class="row-note mono">MOMENTOS SIN PRISA</span><span class="row-plus" aria-hidden="true">+</span></summary><div class="space-description"><p>Una terraza para dedicar tiempo a un libro, a una conversación o a no hacer planes.</p></div></details>
       </div>
       <div class="comfort-strip mono"><span>EL CONFORT, TAMBIÉN EN LOS DETALLES.</span><ul><li>AIRE ACONDICIONADO</li><li>WI-FI</li></ul></div>
     </section>
@@ -141,7 +140,35 @@
         <div class="territory-overlay page-margin"><div class="section-label mono"><span>05 / EL ENTORNO</span><span>EL BOSQUE, CÁDIZ</span></div><h2 id="territory-title" class="territory-title reveal">FUERA DE CASA,<br>TODO POR<br>DESCUBRIR<span class="accent">.</span></h2><span class="territory-bottom mono">EL PUEBLO / EL RÍO / LA SIERRA</span></div>
       </div>
       <div class="territory-caption page-margin mono">El Bosque desde Lomo de Enmedio · Antonio Acosta Fernández · <a href="https://commons.wikimedia.org/wiki/File:El_Bosque_Lomo_de_Enmedio.JPG" target="_blank" rel="noopener noreferrer">CC BY 3.0 ↗</a> · encuadre adaptado</div>
-      <div class="territory-notes page-margin"><p>La Sierra de Cádiz<br>empieza al salir.</p><div><h3>EL BOSQUE Y LOS PUEBLOS BLANCOS</h3><p>Calles, vida de pueblo y gastronomía local. Una forma cercana de descubrir el carácter de la sierra.</p></div><div><h3>MAJACEITE Y SIERRA DE GRAZALEMA</h3><p>El sendero del río Majaceite y el paisaje de la Sierra de Grazalema invitan a explorar. Consulta las condiciones de las rutas antes de salir.</p></div></div>
+      <div class="environment-gallery page-margin">
+        <figure class="landscape-photo image-wipe reveal">
+          <button class="image-trigger" type="button" data-gallery data-image="img/sierra-grazalema.jpg" data-alt="Paisaje real de la Sierra de Grazalema: crestas calizas y montañas bajo un cielo azul." data-caption="Sierra de Grazalema · piet theisohn · CC BY 2.0. Imagen redimensionada, sin recorte del archivo." aria-label="Ampliar fotografía de la Sierra de Grazalema">
+            <img src="img/sierra-grazalema.jpg" width="1800" height="475" loading="lazy" alt="Panorámica de las montañas y rocas calizas de la Sierra de Grazalema."><span class="expand-mark" aria-hidden="true">↗</span>
+          </button>
+          <figcaption><span class="mono">01 / SIERRA DE GRAZALEMA</span><span>piet theisohn · <a href="#creditos-fotos">CC BY 2.0</a></span></figcaption>
+        </figure>
+        <figure class="river-photo image-wipe reveal">
+          <button class="image-trigger" type="button" data-gallery data-image="img/rio-majaceite.jpg" data-alt="Fotografía del río Majaceite a su paso por El Bosque: agua, árboles y sendero junto a la orilla." data-caption="Río Majaceite en El Bosque · El Pantera · CC BY-SA 4.0. Imagen redimensionada, sin recorte del archivo." aria-label="Ampliar fotografía del río Majaceite">
+            <img src="img/rio-majaceite.jpg" width="1600" height="1200" loading="lazy" alt="El río Majaceite entre árboles, junto al sendero de su orilla en El Bosque."><span class="expand-mark" aria-hidden="true">↗</span>
+          </button>
+          <figcaption><span class="mono">02 / RÍO MAJACEITE</span><span>El Pantera · <a href="#creditos-fotos">CC BY-SA 4.0</a></span></figcaption>
+        </figure>
+        <div class="environment-copy">
+          <span class="mono">EL PUEBLO, EL RÍO Y LA SIERRA</span>
+          <h3>CAMINAR.<br>MIRAR.<br>VOLVER.</h3>
+          <p>La Sierra de Cádiz empieza al salir. El sendero del río Majaceite y el paisaje de la Sierra de Grazalema invitan a explorar. Consulta las condiciones de las rutas antes de salir.</p>
+          <p>El Bosque y los pueblos blancos: calles, vida de pueblo y gastronomía local. Una forma cercana de descubrir el carácter de la sierra.</p>
+        </div>
+      </div>
+      <details class="photo-credits page-margin" id="creditos-fotos">
+        <summary class="mono">CRÉDITOS FOTOGRÁFICOS <span aria-hidden="true">+</span></summary>
+        <ul>
+          <li>Ayuntamiento de El Bosque — El Pantera. <a href="https://commons.wikimedia.org/wiki/File:El_Bosque_(provincia_de_C%C3%A1diz,_Espa%C3%B1a)_-_P1470072.jpg" target="_blank" rel="noopener noreferrer">Original</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>. Redimensionada; encuadre adaptado en portada.</li>
+          <li>El Bosque desde Lomo de Enmedio — Antonio Acosta Fernández. <a href="https://commons.wikimedia.org/wiki/File:El_Bosque_Lomo_de_Enmedio.JPG" target="_blank" rel="noopener noreferrer">Original</a> · <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener noreferrer">CC BY 3.0</a>. Redimensionada; encuadre adaptado.</li>
+          <li>Grazalema Mountains — piet theisohn. <a href="https://commons.wikimedia.org/wiki/File:Grazalema_Mountains_(28227255684).jpg" target="_blank" rel="noopener noreferrer">Original</a> · <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a>. Redimensionada.</li>
+          <li>Río Majaceite en El Bosque — El Pantera. <a href="https://commons.wikimedia.org/wiki/File:R%C3%ADo_Majaceite_-_P1460080.jpg" target="_blank" rel="noopener noreferrer">Original</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>. Redimensionada. Las copias de fotografías con licencia compartida mantienen CC BY-SA 4.0.</li>
+        </ul>
+      </details>
     </section>
 
     <section class="contact-edit page-margin section-space" id="contacto" aria-labelledby="contact-title">
@@ -160,7 +187,7 @@
   </footer>
 
   <dialog class="lightbox" aria-labelledby="lightbox-caption">
-    <div class="lightbox-top mono"><span>ARCHIVO VISUAL / PROVISIONAL</span><button type="button" class="lightbox-close" aria-label="Cerrar imagen">CERRAR ×</button></div>
+    <div class="lightbox-top mono"><span>EL BOSQUE Y SU ENTORNO</span><button type="button" class="lightbox-close" aria-label="Cerrar imagen">CERRAR ×</button></div>
     <img alt="">
     <p id="lightbox-caption"></p>
     <div class="lightbox-bottom mono"><button type="button" class="lightbox-prev" aria-label="Imagen anterior">← ANTERIOR</button><span class="lightbox-count" aria-live="polite"></span><button type="button" class="lightbox-next" aria-label="Imagen siguiente">SIGUIENTE →</button></div>

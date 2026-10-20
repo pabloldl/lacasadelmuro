@@ -62,8 +62,8 @@ if ('IntersectionObserver' in window && !reducedMotion.matches) {
   });
 }
 
-// Archivo de cuatro imágenes únicas. Las filas apuntan al mismo archivo,
-// sin duplicar imágenes en el documento ni entradas del lightbox.
+// Fotografías reales del entorno. Los espacios sin fotografías no tienen
+// botones vacíos. Las imágenes autorizadas de la casa se añadirán a este archivo.
 const gallery = [...document.querySelectorAll('[data-gallery]')];
 const lightbox = document.querySelector('.lightbox');
 const lightboxImage = lightbox.querySelector('img');
@@ -89,10 +89,6 @@ function openImage(index, origin) {
 
 gallery.forEach((item, index) => {
   item.addEventListener('click', () => openImage(index, item));
-});
-
-document.querySelectorAll('[data-open-gallery]').forEach(button => {
-  button.addEventListener('click', () => openImage(Number(button.dataset.openGallery), button));
 });
 
 lightbox.querySelector('.lightbox-close').addEventListener('click', () => lightbox.close());
